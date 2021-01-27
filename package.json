@@ -3,18 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --output-path dist"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.1.0",
     "@angular/cdk": "^11.1.0",
+    "@angular/cli": "~11.1.1",
     "@angular/common": "~11.1.0",
     "@angular/compiler": "~11.1.0",
+    "@angular/compiler-cli": "~11.1.0",
     "@angular/core": "~11.1.0",
     "@angular/forms": "~11.1.0",
     "@angular/material": "^11.1.0",
@@ -22,6 +25,7 @@
     "@angular/platform-browser-dynamic": "~11.1.0",
     "@angular/router": "~11.1.0",
     "bootstrap": "^3.4.1",
+    "express": "^4.17.1",
     "ngx-cacheable": "^1.4.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
