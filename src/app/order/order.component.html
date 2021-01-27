@@ -1,0 +1,86 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a><img class="logo navbar-brand" id="home" src="/assets/logo.png" (click)="triggerPage($event)"></a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a><button mat-button id="home" (click)=triggerPage($event)>Home</button></a>
+                </li>
+                <li>
+                    <a><button mat-button id="cart" (click)=triggerPage($event)>Cart</button></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<mat-spinner *ngIf="!product"></mat-spinner>
+<div class="row justify-content-md-center" *ngIf="product" >
+    <div class="col-md-4">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>{{product.title}}</mat-card-title>
+                <mat-card-subtitle>{{product.authors}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src={{ImageURL[8].Image}} />
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Price</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Rs. {{product.price}}</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Rating</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>{{product.average_rating}}</h6>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-md-5">
+        <p>
+            <mat-form-field appearance="legacy" class = "matFormField">
+                <mat-label>User Name</mat-label>
+                <input matInput placeholder="Name" [(ngModel)]="userName">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy"  class = "matFormField">
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="Phone Number" [(ngModel)]="phoneNumber">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy"  class = "matFormField">
+                <mat-label>Email Id</mat-label>
+                <input matInput placeholder="Email Id" [(ngModel)]="emailId">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy"  class = "matFormField">
+                <mat-label>Product</mat-label>
+                <input matInput value={{product.title}} disabled>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy"  class = "matFormField">
+                <mat-label>Price</mat-label>
+                <input matInput value={{product.price}} disabled>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy"  class = "matFormField">
+                <mat-label>Delivery Address</mat-label>
+                <input matInput placeholder="Address" [(ngModel)]="address">
+            </mat-form-field>
+        </p>
+        <button mat-button (click)="orderProduct()">Make Payment</button>
+    </div>
+</div>

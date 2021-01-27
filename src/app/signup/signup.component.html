@@ -1,0 +1,44 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a><img class="logo navbar-brand" id="home" src="/assets/logo.png" (click)="triggerPage($event)"></a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a><button mat-button id="home" (click)=triggerPage($event)>Home</button></a>
+                </li>
+                <li>
+                    <a><button mat-button id="cart" (click)=triggerPage($event)>Cart</button></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container col-md-4">
+    <p>
+        <mat-form-field appearance="legacy" class = "matFormField">
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="User Name" [(ngModel)]="userName">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="legacy" class = "matFormField">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" [(ngModel)]="name">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="legacy"  class = "matFormField">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Phone Number" [(ngModel)]="phoneNumber">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="legacy"  class = "matFormField">
+            <mat-label>Email Id</mat-label>
+            <input matInput placeholder="Email Id" [(ngModel)]="emailId">
+        </mat-form-field>
+    </p>
+    <button mat-button (click)="signUp()">Signup</button>
+</div>
